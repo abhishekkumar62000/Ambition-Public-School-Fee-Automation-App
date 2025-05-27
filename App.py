@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import yagmail # type: ignore 
+import yagmail # type: ignore
 import plotly.express as px
 from datetime import datetime
 import io
