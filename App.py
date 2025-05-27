@@ -12,6 +12,15 @@ import os
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+import yagmail
+import streamlit as st
+
+user = st.secrets["email"]["user"]
+password = st.secrets["email"]["password"]
+
+yag = yagmail.SMTP(user=user, password=password)
+
+
 # ---------- PAGE CONFIG ----------
 st.set_page_config(
     page_title="Fee Warning Automation",
