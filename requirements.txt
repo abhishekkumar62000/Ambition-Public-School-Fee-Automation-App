@@ -1,0 +1,12 @@
+streamlit==1.33.0
+pandas==2.2.2
+openpyxl==3.1.2
+yagmail==0.15.293
+keyring==24.3.0
+requests
+qrcode
+Pillow
+scikit-learn
+plotly
+seaborn
+matplotlib
