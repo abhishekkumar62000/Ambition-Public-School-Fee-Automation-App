@@ -2,6 +2,7 @@ streamlit==1.33.0
 pandas==2.2.2
 openpyxl==3.1.2
 requests
+yagmail
 qrcode
 Pillow
 scikit-learn
