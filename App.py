@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import yagmail # type: ignore
 import plotly.express as px
 from datetime import datetime
 import io
@@ -10,20 +11,6 @@ from sklearn.preprocessing import LabelEncoder
 import os
 import seaborn as sns
 import matplotlib.pyplot as plt
-import smtplib
-from email.message import EmailMessage
-
-# --- Email sending function using smtplib ---
-def send_email(to, subject, body):
-    msg = EmailMessage()
-    msg['Subject'] = subject
-    msg['From'] = st.secrets["email"]["user"]
-    msg['To'] = to
-    msg.set_content(body)
-
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login(st.secrets["email"]["user"], st.secrets["email"]["password"])
-        smtp.send_message(msg)
 
 # ---------- PAGE CONFIG ----------
 st.set_page_config(
@@ -478,7 +465,7 @@ Sincerely,
                 st.error("Please enter your email and password.")
             else:
                 try:
-                    # No need to create yagmail.SMTP instance
+                    yag = yagmail.SMTP(user=sender_email, password=sender_password)
                     with st.spinner("Sending emails and SMS..."):
                         success_count = 0
                         sms_success_count = 0
@@ -510,10 +497,10 @@ Sincerely,
                             sms_status = ""
                             sms_error = ""
                             try:
-                                send_email(
+                                yag.send(
                                     to=row["Email"],
                                     subject=subject,
-                                    body=body
+                                    contents=[body, QR_IMAGE_PATH]  # Optionally, add QR code image here
                                 )
                                 success_count += 1
                             except Exception as e:
