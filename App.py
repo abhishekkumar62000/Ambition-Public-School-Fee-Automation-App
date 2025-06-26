@@ -759,3 +759,5 @@ with st.expander("📝 New Student Admission Data Collection (Click to Expand/Co
             "text/csv",
             key="download-admission-csv"
         )
+        if __name__ == '__main__':
+    main()  # or your main function name
