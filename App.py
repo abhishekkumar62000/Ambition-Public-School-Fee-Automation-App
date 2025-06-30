@@ -1,15 +1,15 @@
- import logging 
+ import logging
 logging.basicConfig(level=logging.DEBUG)
 
-import streamlit as st 
+import streamlit as st
 import pandas as pd
 import yagmail # type: ignore
 import plotly.express as px
-from datetime import datetime 
-import io  
-import requests  
-from sklearn.ensemble import RandomForestClassifier 
-from sklearn.model_selection import train_test_split 
+from datetime import datetime
+import io
+import requests
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import os
 import seaborn as sns
