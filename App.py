@@ -37,7 +37,7 @@ st.markdown(
         margin-top: 1.7rem;
         animation: fadeIn 1.2s;
     }
-    .stButton>button {
+    .stButton>button { 
         background: linear-gradient(90deg, #2E86C1 60%, #117A65 100%);
         color: white;
         border-radius: 10px;
