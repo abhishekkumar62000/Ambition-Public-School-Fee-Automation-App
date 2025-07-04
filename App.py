@@ -1,7 +1,7 @@
   import logging
 logging.basicConfig(level=logging.DEBUG)
  
-import streamlit as st 
+import streamlit as st
 import pandas as pd
 import yagmail # type: ignore
 import plotly.express as px
