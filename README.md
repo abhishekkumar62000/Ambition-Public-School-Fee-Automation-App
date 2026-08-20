@@ -1,1 +1,1 @@
-# Ambition-Public-School-Fee-Automationn
+# Ambition-Public-School-Fee-Automation
